@@ -38,4 +38,4 @@ ENV LC_ALL zh_CN.utf8
 EXPOSE 9123 80
 
 #start service
-COMMAND bash /opt/archer/src/docker/startup.sh
+CMD bash /opt/archer/src/docker/startup.sh

@@ -5,11 +5,11 @@ RUN yum -y install unzip git gcc gcc-c++ make cmake bison openssl-devel mysql-de
     && yum -y install epel-release \
     && yum -y install python34 python34-pip python34-devel.x86_64 \
     && cd /opt \
-    && pip3 install virtualenv -i https://mirrors.ustc.edu.cn/pypi/web/simple/ \
+    && pip3 install virtualenv \
     && virtualenv venv4archer --python=python3.4 \
     && source venv4archer/bin/activate \
     && git clone https://github.com/chenmin1992/archer.git \
-    && pip3 install -r /opt/archer/src/docker/requirements.txt -i https://mirrors.ustc.edu.cn/pypi/web/simple/ \
+    && pip3 install -r /opt/archer/src/docker/requirements.txt \
     && cp /opt/archer/src/docker/pymysql/connections.py /opt/venv4archer/lib/python3.4/site-packages/pymysql/ \
     && cp /opt/archer/src/docker/pymysql/cursors.py /opt/venv4archer/lib/python3.4/site-packages/pymysql/ \
     && yum -y install nginx \
@@ -17,8 +17,8 @@ RUN yum -y install unzip git gcc gcc-c++ make cmake bison openssl-devel mysql-de
     && nginx \ 
 #sqladvisor
     && yum -y install libaio-devel libffi-devel glib2 glib2-devel \
-    && yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm \
-    && yum -y install Percona-Server-devel-56.x86_64  Percona-Server-shared-56.x86_64  Percona-Server-client-56.x86_64 \ 
+    && yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-6/percona-release-0.1-6.noarch.rpm \
+    && yum -y install Percona-Server-devel-56 Percona-Server-shared-56 Percona-Server-client-56 \
     && git clone https://github.com/Meituan-Dianping/SQLAdvisor.git \
     && cd /opt/SQLAdvisor/ \
     && yum -y install make \

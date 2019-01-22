@@ -14,7 +14,6 @@ RUN yum -y install unzip git gcc gcc-c++ make cmake bison openssl-devel mysql-de
     && cp /opt/archer/src/docker/pymysql/cursors.py /opt/venv4archer/lib/python3.4/site-packages/pymysql/ \
     && yum -y install nginx \
     && cp /opt/archer/src/docker/nginx.conf /etc/nginx/ \
-    && nginx \ 
 #sqladvisor
     && yum -y install libaio-devel libffi-devel glib2 glib2-devel \
     && yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-6/percona-release-0.1-6.noarch.rpm \
@@ -36,7 +35,7 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL zh_CN.utf8 
 
 #port
-EXPOSE 9123
+EXPOSE 9123 80
 
 #start service
-ENTRYPOINT bash /opt/archer/src/docker/startup.sh && bash
+COMMAND bash /opt/archer/src/docker/startup.sh

@@ -4,6 +4,7 @@ cd /opt/archer
 #切换python运行环境
 source /opt/venv4archer/bin/activate
 #修改重定向端口，启动ngnix
+NGINX_PORT=${NGINX_PORT:-80}
 sed -i "s/nginx_port/$NGINX_PORT/g" /etc/nginx/nginx.conf
 /usr/sbin/nginx
 

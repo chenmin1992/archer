@@ -1,4 +1,4 @@
-FROM docker.io/centos
+FROM centos
 
 #archer
 RUN yum -y install unzip git gcc gcc-c++ make cmake bison openssl-devel mysql-devel openldap-devel \
@@ -35,7 +35,7 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL zh_CN.utf8 
 
 #port
-EXPOSE 9123 80
+EXPOSE 9123 80 443
 
 #start service
 CMD bash /opt/archer/src/docker/startup.sh

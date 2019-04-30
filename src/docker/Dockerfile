@@ -5,6 +5,8 @@ RUN yum -y install unzip git gcc gcc-c++ make cmake bison openssl-devel mysql-de
     && yum -y install epel-release \
     && yum -y install python34 python34-pip python34-devel.x86_64 \
     && cd /opt \
+    && ln -s /usr/bin/pip3.4 /usr/bin/pip3
+    && ln -s /usr/bin/pip3.4 /usr/bin/pip
     && pip3 install virtualenv \
     && virtualenv venv4archer --python=python3.4 \
     && source venv4archer/bin/activate \

@@ -347,7 +347,7 @@
             //查看表结构
             else if (sql === 'show create table') {
                 var table_name = $("#table_name").val();
-                sqlContent = "show create table " + table_name + ";"
+                sqlContent = "show create table `" + table_name + "`;"
             }
             //处理SQL，去除注释、空行等
             sqlContent = sqlContent.replace(/^--\s+.*|^#\s+.*/g, '');

@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 
 #archer
 RUN yum -y install unzip git gcc gcc-c++ make cmake bison openssl-devel mysql-devel openldap-devel \
